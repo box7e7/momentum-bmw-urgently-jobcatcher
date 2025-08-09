@@ -1,0 +1,22 @@
+{
+  "message": {
+    "poNumber": 9035294,
+    "caseDTO": {
+      "id": "7256404"
+    },
+    "service": {
+      "number": 9035294,
+      "status": 1,
+      "statusDescription": "Found Providers",
+      "serviceId": 2001,
+      "type": "RSA_ON_DEMAND"
+    },
+    "provider": {
+      "status": 1
+    },
+    "location": {
+      "address": "9911 Centre Pkwy, Houston, TX 77036, USA",
+      "zipCode": "77036"
+    }
+  }
+}

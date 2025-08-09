@@ -1,0 +1,24 @@
+services:
+  app:
+    build: .
+    image: auth-bmw:latest
+    container_name: auth-bmw
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - HOME=/usr/src/app
+      - PM2_HOME=/usr/src/app/.pm2
+    ports:
+      - "3999:3003"
+    volumes:
+      - ./logs:/usr/src/app/logs
+      - ./responses:/usr/src/app/responses
+      - ./cookies.json:/usr/src/app/cookies.json
+      - ./auth-token.json:/usr/src/app/auth-token.json
+      - ./bmw-group-sso-urgently:/usr/src/app/bmw-group-sso-urgently:ro
+      - ./pm2:/usr/src/app/.pm2
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --spider http://localhost:3003/api/server-url || exit 1"]
+      interval: 1m
+      timeout: 10s
+      retries: 3

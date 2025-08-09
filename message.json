@@ -1,0 +1,138 @@
+{
+  "message": {
+    "caseDTO": {
+      "id": "7260732"
+    },
+    "service": {
+      "id": "d8ed6c58-fe37-4910-b25a-9b9be9d16000",
+      "number": 9040558,
+      "status": 1,
+      "statusDescription": "Found Providers",
+      "name": "Towing",
+      "serviceId": 2001,
+      "serviceType": "TOW",
+      "created": 1754772189000,
+      "expires": 1754775789000,
+      "notes": "Towing skates are REQUIRED on your flatbed truck for this job.\n\n \n Where is your vehicle located? \n 95 April Point Dr N, Montgomery, TX 77356, USA\n Is your vehicle blocking traffic or in an otherwise unsafe location? \n No\n Where at this location is the vehicle actually parked? \n Home\n Vehicle location actual parking details \n Driveway\n Confirm not restricted highway \n No\n Which State Route or Highway is your vehicle on? \n \n Is there enough safe space available around the vehicle for our service technician to work? \n Yes\n What is the reason for towing the vehicle? \n Engine will not start \n Does your vehicle go into neutral? \n no \n Are the front wheels turned or straight? \n Straight \n Is the vehicle in a garage? \n No \n What is the ceiling height of the garage? \n  \n Where will the vehicle be dropped off? \n 17830 Interstate 45 South, The Woodlands, TX 77384-0000 \n Would you like to schedule this tow for later? \n No \n Will you be with the vehicle when help arrives? \n Yes \n Based on your coverage, we can arrange for an Uber or Lyft. Are you interested in the service? \n No \n Customer Notes \n  \n ",
+      "demo": false,
+      "partnerName": "BMW",
+      "description": "I need a tow",
+      "type": "RSA_ON_DEMAND",
+      "dispatchOnHold": false,
+      "contactPhoneNumber": "8323024473",
+      "rateCard": "GOLD",
+      "contactName": "Shana Sonnier",
+      "roundTrip": false
+    },
+    "personalInfo": {
+      "name": "Shana Sonnier",
+      "phone": "8323024473",
+      "phoneCode": 1,
+      "language": "en",
+      "textOptIn": true,
+      "id": "ae8684a3-23da-4e61-a0a0-adfbc59de7b9",
+      "enabled": false
+    },
+    "location": {
+      "street": "95 April Point Drive North",
+      "city": "Montgomery",
+      "state": "TX",
+      "zipCode": "77356",
+      "longitude": -95.6112383,
+      "latitude": 30.3757482,
+      "address": "95 April Point Dr N, Montgomery, TX 77356, USA",
+      "impoundFacility": false,
+      "zip": "77356"
+    },
+    "dropOffLocation": {
+      "street": "17830 Interstate 45 South",
+      "city": "The Woodlands",
+      "state": "TX",
+      "zipCode": "77384-0000",
+      "longitude": -95.4567314,
+      "latitude": 30.1984864,
+      "address": "17830 Interstate 45 South,The Woodlands TX 77384-0000",
+      "impoundFacility": false,
+      "facilityId": 89493,
+      "zip": "77384-0000"
+    },
+    "vehicle": {
+      "make": "BMW",
+      "model": "X2 SDRIVE28I",
+      "color": "MINERAL GREY METALLIC",
+      "year": "2020",
+      "id": "0aad945a-ca48-4101-923f-591a2a030fc4",
+      "vin": "WBXYH9C05M5S11914"
+    },
+    "provider": {
+      "costs": [
+        {
+          "type": "BASE",
+          "price": 230,
+          "providerPaymentCreated": false,
+          "hookPrice": 160,
+          "pricePerMile": 5,
+          "freeMiles": 5,
+          "paymentNote": null,
+          "hideOfferPrice": false
+        }
+      ],
+      "validProviderDetails": false,
+      "interested": false
+    },
+    "stepDTO": {
+      "preInspectionVideoRequired": false,
+      "preInspectionSignatureRequired": true,
+      "postInspectionVideoRequired": false,
+      "postInspectionSignatureRequired": true,
+      "providerLeftSiteStatusRequired": false,
+      "jobMetricResponseRequired": false,
+      "preInspectionRequired": true,
+      "preInspectionType": "PHOTO",
+      "postInspectionRequired": true,
+      "postInspectionType": "PHOTO",
+      "preServiceDocketFormRequired": false,
+      "postServiceDocketFormRequired": false,
+      "preServiceIndemnityFormRequired": false,
+      "postServiceIndemnityFormRequired": false,
+      "preInspectionSkipRequired": false,
+      "postInspectionSkipRequired": false,
+      "skatesRequired": false,
+      "considerDriverDocuments": false,
+      "preInspectionPhotoCount": 4,
+      "postInspectionPhotoCount": 4
+    },
+    "communicationChannel": {
+      "customerEndPoint": {
+        "endPoint": "8323024473"
+      }
+    },
+    "dispatchCommunicationChannel": {
+      "customerEndPoint": {
+        "endPoint": "8323024473"
+      }
+    },
+    "step": {
+      "preInspectionVideoRequired": false,
+      "preInspectionSignatureRequired": true,
+      "postInspectionVideoRequired": false,
+      "postInspectionSignatureRequired": true,
+      "providerLeftSiteStatusRequired": false,
+      "jobMetricResponseRequired": false,
+      "preInspectionRequired": true,
+      "preInspectionType": "PHOTO",
+      "postInspectionRequired": true,
+      "postInspectionType": "PHOTO",
+      "preServiceDocketFormRequired": false,
+      "postServiceDocketFormRequired": false,
+      "preServiceIndemnityFormRequired": false,
+      "postServiceIndemnityFormRequired": false,
+      "preInspectionSkipRequired": false,
+      "postInspectionSkipRequired": false,
+      "skatesRequired": false,
+      "considerDriverDocuments": false,
+      "preInspectionPhotoCount": 4,
+      "postInspectionPhotoCount": 4
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "assignJobMultipleTimes": {
+    "enabled": true,
+    "duration": 4,
+    "interval": 1000
+  },
+  "eta": {
+    "austin": 70,
+    "dallas": 60,
+    "other": 39
+  }
+}

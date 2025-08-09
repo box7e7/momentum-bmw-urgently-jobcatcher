@@ -1,0 +1,8 @@
+{
+  "austin": {
+    "enabled": true
+  },
+  "dallas": {
+    "enabled": false
+  }
+}

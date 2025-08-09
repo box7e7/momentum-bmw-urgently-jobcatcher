@@ -1,0 +1,32 @@
+# Node
+node_modules/
+npm-debug.log
+yarn.lock
+package-lock.json
+
+# Environment / secrets
+.env
+.env.* 
+auth-token.json
+cookies.json
+
+# OS / editor
+.DS_Store
+.vscode
+.idea
+
+# Logs and runtime
+logs/
+responses/
+screenshots/
+scheduledJobs.logs
+pm2/
+
+# Build / cache
+.cache/
+dist/
+build/
+
+# Docker
+docker-compose.override.yml
+.env.local

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BMW SSO Settings</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0066B1;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #004C84;
+    }
+    .status {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+    .success {
+      background-color: #DFF0D8;
+      color: #3C763D;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter your username">
+  </div>
+  <div class="form-group">
+    <label for="passcode">Passcode:</label>
+    <input type="password" id="passcode" placeholder="Enter your passcode">
+  </div>
+  <div class="form-group">
+    <label for="topic">Ntfy Topic:</label>
+    <input type="text" id="topic" placeholder="Enter your ntfy.sh topic">
+  </div>
+  <button id="save">Save Settings</button>
+  <div id="status" class="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "BMW Group SSO Auto Login",
+  "version": "2.0",
+  "description": "Automates login process for BMW Group SSO",
+  "permissions": ["activeTab", "scripting", "storage", "debugger", "webRequest", "tabs", "alarms"],
+  "host_permissions": [
+    "https://auth.bmwgroup.com/*",
+    "https://sgate.bmwgroup.com/*",
+    "https://*.bmwgroup.com/*",
+    "https://*.urgent.ly/*",
+    "https://bmw.urgent.ly/*",
+    "https://portal.urgent.ly/*",
+    "https://api.urgent.ly/*",
+    "https://ntfy.sh/*",
+    "https://*.pndsn.com/v2/subscribe/*",
+    "https://ps.pndsn.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "BMW SSO Settings"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://bmw.urgent.ly/*"],
+      "js": ["urgently-content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
