@@ -10,6 +10,7 @@ set -e
 APP_DIR="/usr/src/app"
 LOG_DIR="${APP_DIR}/logs"
 CRON_LOG="${LOG_DIR}/cron.log"
+COOKIES_LOG="${LOG_DIR}/towbook18.log"
 
 mkdir -p "${LOG_DIR}"
 
@@ -19,6 +20,7 @@ mkdir -p "${LOG_DIR}"
 cat > /tmp/cronjobs <<EOF
 # m h dom mon dow command
 0 */2 * * * cd ${APP_DIR} && ./checker_blue.sh >> ${CRON_LOG} 2>&1
+0 */6 * * * cd ${APP_DIR} && bash getCookies_towbook18.sh > ${COOKIES_LOG} 2>&1
 EOF
 
 crontab /tmp/cronjobs || true
