@@ -1,35 +1,42 @@
-const express = require('express');
-const path = require('path');
-const { exec } = require('child_process');
-const fs = require('fs/promises');
-const fsSync = require('fs');
-const { jwtDecode } = require('jwt-decode');
-const multer = require('multer');
+import express from 'express';
+import path from 'path';
+import { exec } from 'child_process';
+import fs from 'fs/promises';
+import fsSync from 'fs';
+import { jwtDecode } from 'jwt-decode';
+import multer from 'multer';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import { createReadStream } from 'fs';
+import { dispatchToTowbook } from './towbook-dispatch.js';
+
+// __dirname shim for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Configure multer for handling file uploads
 const storage = multer.diskStorage({
-    destination: path.join(__dirname, 'public', 'screenshots'),
-    filename: function(req, file, cb) {
-        // Use timestamp to prevent caching
-        cb(null, `latest.png`);
-    }
+  destination: path.join(__dirname, 'public', 'screenshots'),
+  filename: function (req, file, cb) {
+    // Use timestamp to prevent caching
+    cb(null, `latest.png`);
+  }
 });
 
 // Ensure screenshots directory exists
 const screenshotsDir = path.join(__dirname, 'public', 'screenshots');
 if (!fsSync.existsSync(screenshotsDir)) {
-    fsSync.mkdirSync(screenshotsDir, { recursive: true });
+  fsSync.mkdirSync(screenshotsDir, { recursive: true });
 }
 const upload = multer({ storage: storage });
-const { createReadStream } = require('fs');
 
 const app = express();
 const port = 3003;
 
 // Endpoint to get server URL
 app.use((req, res, next) => {
-    // Get protocol from X-Forwarded-Proto header or default to http
-    req.protocol = req.headers['x-forwarded-proto'] || req.protocol;
+    // Store protocol in res.locals to avoid assigning to read-only req.protocol
+    res.locals.protocol = req.headers['x-forwarded-proto'] || req.protocol;
     next();
 });
 
@@ -493,6 +500,27 @@ app.get('/api/status', async (req, res) => {
         res.status(500).json({ 
             error: 'Failed to check process status',
             details: err.message
+        });
+    }
+});
+
+app.post('/api/dispatch', express.json(), async (req, res) => {
+    try {
+        const { po } = req.body;
+        if (!po) {
+            return res.status(400).json({ success: false, message: 'Missing PO number' });
+        }
+
+        console.log(`Received dispatch request for PO: ${po}`);
+        const result = await dispatchToTowbook(po.toString());
+        // dispatchToTowbook returns a detailed result object (success/message/etc.)
+        res.json(result);
+    } catch (err) {
+        console.error('Error in /api/dispatch:', err);
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error during dispatch',
+            error: err.message
         });
     }
 });

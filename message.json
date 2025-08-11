@@ -1,84 +1,64 @@
 {
   "message": {
     "caseDTO": {
-      "id": "7260732"
+      "id": "7264343"
     },
     "service": {
-      "id": "d8ed6c58-fe37-4910-b25a-9b9be9d16000",
-      "number": 9040558,
+      "id": "46ba5a02-fe64-4d59-8eeb-bda9ca85ad2e",
+      "number": 9044970,
       "status": 1,
       "statusDescription": "Found Providers",
       "name": "Towing",
       "serviceId": 2001,
       "serviceType": "TOW",
-      "created": 1754772189000,
-      "expires": 1754775789000,
-      "notes": "Towing skates are REQUIRED on your flatbed truck for this job.\n\n \n Where is your vehicle located? \n 95 April Point Dr N, Montgomery, TX 77356, USA\n Is your vehicle blocking traffic or in an otherwise unsafe location? \n No\n Where at this location is the vehicle actually parked? \n Home\n Vehicle location actual parking details \n Driveway\n Confirm not restricted highway \n No\n Which State Route or Highway is your vehicle on? \n \n Is there enough safe space available around the vehicle for our service technician to work? \n Yes\n What is the reason for towing the vehicle? \n Engine will not start \n Does your vehicle go into neutral? \n no \n Are the front wheels turned or straight? \n Straight \n Is the vehicle in a garage? \n No \n What is the ceiling height of the garage? \n  \n Where will the vehicle be dropped off? \n 17830 Interstate 45 South, The Woodlands, TX 77384-0000 \n Would you like to schedule this tow for later? \n No \n Will you be with the vehicle when help arrives? \n Yes \n Based on your coverage, we can arrange for an Uber or Lyft. Are you interested in the service? \n No \n Customer Notes \n  \n ",
+      "created": 1754936072000,
+      "expires": 1754941744000,
+      "notes": "Towing skates are REQUIRED on your flatbed truck for this job.\n\n Will the transmission go into neutral?\nyes\nIs the steering locked?\nno\nDO YOU NEED A RIDE WITH THE PROVIDER TO THE DESTINATION? (MAX OF 2 PEOPLE)?\nno\nIs member at home?\nyes\nIs the vehicle at a safe location OR side of the road?\nSafe Location\nIs the car in a garage?\nno",
       "demo": false,
       "partnerName": "BMW",
       "description": "I need a tow",
       "type": "RSA_ON_DEMAND",
       "dispatchOnHold": false,
-      "contactPhoneNumber": "8323024473",
-      "rateCard": "GOLD",
-      "contactName": "Shana Sonnier",
+      "contactPhoneNumber": "7135963169",
       "roundTrip": false
     },
     "personalInfo": {
-      "name": "Shana Sonnier",
-      "phone": "8323024473",
-      "phoneCode": 1,
-      "language": "en",
+      "name": "Lucy Dong",
+      "phone": "7135963169",
       "textOptIn": true,
-      "id": "ae8684a3-23da-4e61-a0a0-adfbc59de7b9",
+      "id": "fe2f90db-6bc3-47ae-95fb-72f9e2f2fe28",
       "enabled": false
     },
     "location": {
-      "street": "95 April Point Drive North",
-      "city": "Montgomery",
+      "street": "2212 Texas 71 Business",
+      "city": "Columbus",
       "state": "TX",
-      "zipCode": "77356",
-      "longitude": -95.6112383,
-      "latitude": 30.3757482,
-      "address": "95 April Point Dr N, Montgomery, TX 77356, USA",
+      "zipCode": "78934",
+      "longitude": -96.54031049999999,
+      "latitude": 29.6934976,
+      "address": "2212 TX-71 BUS, Columbus, TX 78934, USA",
       "impoundFacility": false,
-      "zip": "77356"
+      "zip": "78934"
     },
     "dropOffLocation": {
-      "street": "17830 Interstate 45 South",
-      "city": "The Woodlands",
+      "street": "9570 Southwest Freeway",
+      "city": "Houston",
       "state": "TX",
-      "zipCode": "77384-0000",
-      "longitude": -95.4567314,
-      "latitude": 30.1984864,
-      "address": "17830 Interstate 45 South,The Woodlands TX 77384-0000",
+      "zipCode": "77074",
+      "longitude": -95.5443294,
+      "latitude": 29.6777186,
+      "address": "9570 Southwest Freeway,Houston TX 77074",
       "impoundFacility": false,
-      "facilityId": 89493,
-      "zip": "77384-0000"
+      "keyDropboxAvailable": "YES",
+      "zip": "77074"
     },
     "vehicle": {
       "make": "BMW",
-      "model": "X2 SDRIVE28I",
-      "color": "MINERAL GREY METALLIC",
-      "year": "2020",
-      "id": "0aad945a-ca48-4101-923f-591a2a030fc4",
-      "vin": "WBXYH9C05M5S11914"
-    },
-    "provider": {
-      "costs": [
-        {
-          "type": "BASE",
-          "price": 230,
-          "providerPaymentCreated": false,
-          "hookPrice": 160,
-          "pricePerMile": 5,
-          "freeMiles": 5,
-          "paymentNote": null,
-          "hideOfferPrice": false
-        }
-      ],
-      "validProviderDetails": false,
-      "interested": false
+      "model": "430I",
+      "color": "Alpine White",
+      "year": "2021",
+      "id": "23e9a7d1-591d-4374-abf3-8f351eb52d7d",
+      "vin": "WBA53AP00NCH69144"
     },
     "stepDTO": {
       "preInspectionVideoRequired": false,
@@ -101,16 +81,6 @@
       "considerDriverDocuments": false,
       "preInspectionPhotoCount": 4,
       "postInspectionPhotoCount": 4
-    },
-    "communicationChannel": {
-      "customerEndPoint": {
-        "endPoint": "8323024473"
-      }
-    },
-    "dispatchCommunicationChannel": {
-      "customerEndPoint": {
-        "endPoint": "8323024473"
-      }
     },
     "step": {
       "preInspectionVideoRequired": false,

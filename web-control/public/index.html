@@ -314,10 +314,241 @@
             font-size: 0.9em;
             margin-top: 5px;
         }
+
+        /* Dispatch modal (inspired by UrgentlyJobCatcher styling) */
+        .dispatch-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.75);
+            z-index: 2000;
+        }
+
+        .dispatch-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80%;
+            overflow: auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .dispatch-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .dispatch-close {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 0;
+        }
+
+        .dispatch-body {
+            margin-top: 10px;
+        }
+
+        .dispatch-details {
+            background: #f8f9fa;
+            color: #2c3e50;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            white-space: pre-wrap;
+            max-height: 360px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .dispatch-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        /* Towbook Dispatch styling inspired by screenshot */
+        .towbook-dispatch {
+            background: #f7fafc; /* very light background */
+            border-radius: 10px;
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            margin: 0 auto 20px;
+            width: 100%;
+            max-width: 1000px; /* ensure block is centered and constrained like the screenshot */
+        }
+
+        .towbook-dispatch .title {
+            width: 100%;
+            text-align: center;
+            font-weight: 700;
+            color: #2d3748;
+            margin: 0 0 8px 0;
+            font-size: 18px;
+        }
+
+        /* center the form row and constrain its width so the input+button are centered on large screens */
+        .towbook-dispatch .form-row {
+            display: flex;
+            gap: 16px;
+            width: 100%;
+            max-width: 960px;        /* cap the maximum width */
+            align-items: center;
+            justify-content: flex-start; /* input on left, button directly to the right */
+            margin: 0 auto;
+        }
+
+        /* ensure the input column stacks label + input and grows to fill remaining space;
+           add right margin so button sits visually separated */
+        .towbook-dispatch .form-row > div {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 auto;
+            width: auto;
+            min-width: 220px;
+            margin-right: 12px;
+        }
+       
+        /* make input and button equal height for perfect baseline alignment */
+        .towbook-dispatch input[type="text"] {
+            height: 44px;
+            line-height: 20px;
+        }
+
+        .towbook-dispatch .dispatch-button {
+            height: 44px;
+            padding: 0 16px;
+            flex: 0 0 120px;
+            margin-left: 0;
+        }
+
+        .towbook-dispatch label {
+            display: block;
+            font-size: 12px;
+            color: #4a5568;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            margin-bottom: 6px;
+        }
+
+        .towbook-dispatch input[type="text"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 15px;
+            color: #2d3748;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+            box-sizing: border-box;
+        }
+
+        /* make button a fixed width so input stretches to it responsively on larger screens */
+        .towbook-dispatch .dispatch-button {
+            flex: 0 0 130px;
+            padding: 10px 14px;
+            background: linear-gradient(180deg,#2b9af3,#0b74d1);
+            color: white;
+            border-radius: 6px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(11,116,209,0.18);
+            text-align: center;
+            transition: transform 0.12s ease, box-shadow 0.12s ease;
+        }
+
+        .towbook-dispatch .dispatch-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(11,116,209,0.18);
+        }
+
+        .towbook-dispatch .dispatch-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Adjustments for small screens: ensure input and button match width and are stacked */
+        @media (max-width: 700px) {
+            .towbook-dispatch { flex-direction: column; align-items: stretch; padding: 16px; }
+            .towbook-dispatch .form-row {
+                flex-direction: column;
+                gap: 8px;
+                max-width: 100%;
+                align-items: stretch;
+                justify-content: center;
+            }
+            /* ensure wrapper doesn't force sizing and the input fills available width */
+            .towbook-dispatch .form-row > div {
+                margin-right: 0;
+                width: 100%;
+                flex: none;
+            }
+            /* force both input and button to the same full width */
+            .towbook-dispatch input[type="text"],
+            .towbook-dispatch .dispatch-button,
+            .towbook-dispatch .form-row > button {
+                width: 100% !important;
+                box-sizing: border-box;
+                display: block;
+            }
+            .towbook-dispatch input[type="text"] {
+                max-width: none;
+                padding: 12px 14px;
+                height: 44px;
+                font-size: 15px;
+            }
+            .towbook-dispatch .dispatch-button {
+                flex: none;
+                padding: 12px 14px;
+                font-size: 15px;
+                border-radius: 6px;
+                box-shadow: none;
+                text-align: center;
+            }
+            .towbook-dispatch .title { font-size: 16px; }
+        }
+
+        @media (max-width: 600px) {
+            .dispatch-content { padding: 16px; }
+            .dispatch-close { width: 28px; height: 28px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="towbook-dispatch" style="margin-bottom:20px;">
+            <div class="title">📋 Towbook Dispatch</div>
+            <div class="form-row">
+                <div style="flex:1;">
+                    <input id="poNumberInput" type="text" placeholder="Enter PO Number">
+                </div>
+                <button id="dispatchBtn" class="dispatch-button" onclick="dispatchJob()">DISPATCH</button>
+            </div>
+        </div>
         <h1>PM2 Process Control</h1>
         <div id="tokenStatus" class="token-status">Checking token status...</div>
         <div id="status" class="status">Checking status...</div>
@@ -395,6 +626,14 @@
             <div style="position: relative; background: #000; border-radius: 4px; overflow: hidden;">
                 <img id="screenshot" src="/screenshots/latest.png" alt="Live Screenshot" style="display: block; width: 100%; height: auto;">
             </div>
+        </div>
+    </div>
+
+    <!-- Dispatch Toast (replaces modal) -->
+    <div id="dispatch-toast" aria-live="polite" style="position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:2000;display:none;">
+        <div id="dispatch-toast-inner" style="background:#fff;padding:12px 18px;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.12);min-width:320px;max-width:800px;display:flex;align-items:center;gap:12px;">
+            <div id="dispatch-toast-icon" style="width:20px;height:20px;"></div>
+            <div id="dispatch-toast-text" style="flex:1;color:#213547;font-weight:600;">Dispatching...</div>
         </div>
     </div>
 
@@ -720,6 +959,125 @@
                 console.error('Error saving ETA config:', error);
                 alert('Failed to save ETA configuration');
             }
+        }
+
+        // Dispatch job UI function (opens modal and shows detailed feedback)
+        async function dispatchJob() {
+            const poInput = document.getElementById('poNumberInput');
+            const po = poInput.value && poInput.value.trim();
+            if (!po) {
+                alert('Please enter a PO number');
+                return;
+            }
+
+            // Open modal and set loading state
+            openDispatchModal();
+            setDispatchLoading(`Dispatching PO ${po}...`);
+
+            try {
+                const response = await fetch('/api/dispatch', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ po })
+                });
+
+                let result;
+                try {
+                    result = await response.json();
+                } catch (parseErr) {
+                    // Non-JSON response
+                    setDispatchResult(false, `Invalid response from server (status ${response.status})`, await response.text());
+                    return;
+                }
+
+                if (result.success) {
+                    setDispatchResult(true, result.message || `Dispatched PO ${po}`, JSON.stringify(result, null, 2));
+                    // clear input on success
+                    poInput.value = '';
+                } else {
+                    // result indicates failure but may contain details
+                    const msg = result.message || result.error || 'Dispatch failed';
+                    setDispatchResult(false, msg, JSON.stringify(result, null, 2));
+                }
+            } catch (err) {
+                console.error('Dispatch error:', err);
+                setDispatchResult(false, `Network or server error: ${err.message}`, err.stack || String(err));
+            }
+        }
+
+        // Toast helper functions (replaces modal behaviour)
+        let lastDispatchDetails = '';
+
+        // Keep old function names so existing code (dispatchJob) works
+        function openDispatchModal() {
+            showToastLoading('Preparing dispatch...');
+        }
+
+        function closeDispatchModal() {
+            hideToast();
+        }
+
+        function setDispatchLoading(text) {
+            showToastLoading(text);
+        }
+
+        function setDispatchResult(success, summaryText, detailsText) {
+            lastDispatchDetails = detailsText || '';
+            const toastText = (success ? 'Success: ' : 'Error: ') + (summaryText || '');
+            showToastResult(success, toastText);
+        }
+
+        function copyDispatchDetails() {
+            if (!lastDispatchDetails) {
+                showNotification('No dispatch details available to copy', 'error');
+                return;
+            }
+            navigator.clipboard?.writeText(lastDispatchDetails).then(() => {
+                showNotification('Dispatch details copied to clipboard', 'success');
+            }).catch(() => {
+                showNotification('Failed to copy details', 'error');
+            });
+        }
+
+        // Toast implementation
+        function showToastLoading(text) {
+            const toast = document.getElementById('dispatch-toast');
+            const inner = document.getElementById('dispatch-toast-inner');
+            const textEl = document.getElementById('dispatch-toast-text');
+
+            textEl.textContent = text || 'Dispatching...';
+            inner.style.borderLeft = '4px solid #2196F3';
+            inner.style.background = '#fff';
+            inner.style.color = '#213547';
+            toast.style.display = 'block';
+        }
+
+        function showToastResult(success, text) {
+            const toast = document.getElementById('dispatch-toast');
+            const inner = document.getElementById('dispatch-toast-inner');
+            const textEl = document.getElementById('dispatch-toast-text');
+
+            textEl.textContent = text || (success ? 'Dispatched' : 'Dispatch failed');
+            if (success) {
+                inner.style.borderLeft = '4px solid #27ae60';
+                inner.style.background = '#e9f7ef';
+                inner.style.color = '#155724';
+            } else {
+                inner.style.borderLeft = '4px solid #e74c3c';
+                inner.style.background = '#fff5f5';
+                inner.style.color = '#721c24';
+            }
+
+            toast.style.display = 'block';
+            // Auto-hide after 4s
+            setTimeout(() => {
+                hideToast();
+            }, 4000);
+        }
+
+        function hideToast() {
+            const toast = document.getElementById('dispatch-toast');
+            if (toast) toast.style.display = 'none';
         }
 
         // Load initial configurations
