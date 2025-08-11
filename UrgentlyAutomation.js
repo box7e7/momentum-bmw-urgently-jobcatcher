@@ -127,7 +127,8 @@ class UrgentlyAutomation {
     // Check if job should be assigned
     async isAssignJob(address, zip, serviceId) {
         let location;
-        let url = `http://38.114.122.151:9096/geocode?address=${address}&zip=${zip}`;
+        const geocodeHost = process.env.GEOCODE_HOST || process.env.GEOCODE_URL || 'http://38.114.122.151:9096';
+        let url = `${geocodeHost}/geocode?address=${encodeURIComponent(address)}&zip=${encodeURIComponent(zip)}`;
         const apiKey = process.env.GEOCODE_API_KEY || process.env.API_KEY;
         const fetchOptions = apiKey ? { headers: { 'api-key': apiKey } } : {};
         let result = await fetch(url, fetchOptions);

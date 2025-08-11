@@ -21,7 +21,8 @@ async function main() {
     process.exit(1);
   }
 
-  const url = 'http://38.114.122.151:9096/geocode?address=7003%20bellerive%20dr%20houston,%20tx&zip=77074';
+  const geocodeHost = process.env.GEOCODE_HOST || process.env.GEOCODE_URL || 'http://38.114.122.151:9096';
+  const url = `${geocodeHost}/geocode?address=7003%20bellerive%20dr%20houston,%20tx&zip=77074`;
   try {
     const res = await fetch(url, {
       headers: {
