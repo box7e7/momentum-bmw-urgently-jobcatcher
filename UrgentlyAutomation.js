@@ -128,11 +128,9 @@ class UrgentlyAutomation {
     async isAssignJob(address, zip, serviceId) {
         let location;
         let url = `http://38.114.122.151:9096/geocode?address=${address}&zip=${zip}`;
-        let result = await fetch(url, {
-            headers: {
-                'api-key': 'NQqjUgEZ801iP9dFpOA4G1LnFYOekYct8dUMH1hU'
-            }
-        });
+        const apiKey = process.env.GEOCODE_API_KEY || process.env.API_KEY;
+        const fetchOptions = apiKey ? { headers: { 'api-key': apiKey } } : {};
+        let result = await fetch(url, fetchOptions);
         location = await result.json();
         console.log("///// location from isAssignJob //////", location);
       
