@@ -74,7 +74,7 @@ async function getJobDetails(po, authToken) {
 
    async function getAuthToken() {
       try {
-        let auth_token_obj = await fs.readFile('../cookies.json');
+        let auth_token_obj = await fs.readFile('./cookies.json');
         let auth_token = JSON.parse(auth_token_obj)["data"][0]["authToken"];
         
         // Check token expiration

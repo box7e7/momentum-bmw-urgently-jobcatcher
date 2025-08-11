@@ -4,7 +4,7 @@ import { data as bodyData } from './data0.js';
 // import { data as bodyData } from './data0_completed.js';
 import { getJobDetails, getAuthToken, extractJobInfo } from './getJobDetails.js';
 
-let cookiesFileName = "../cookies_towbook18.json";
+let cookiesFileName = "./cookies_towbook18.json";
 
 async function processCookies(cookies) {
   const cookieArguments = [
