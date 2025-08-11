@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     cron \
     wget \
     unzip \
+    nano \
   && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
