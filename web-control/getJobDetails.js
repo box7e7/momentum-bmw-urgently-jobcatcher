@@ -31,6 +31,30 @@ async function getJobDetails(po, authToken) {
     }
   }
 
+
+async function getCaseDetails(casePo, authToken) {
+    const url = `https://ops-apis.urgent.ly/v3/ops/cases/${casePo}`;
+    const headers = {
+      'Content-Type': 'application/json; charset=UTF-8',
+      'Accept-Encoding': 'gzip, deflate, br',
+      'Connection': 'keep-alive',
+      'auth-token': authToken
+    };
+
+    try {
+      const response = await fetch(url, { headers });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status} - ${response.statusText}`);
+      }
+      const data = await response.json();
+      return data;
+    } catch (e) {
+      console.error('Error fetching case details:', e);
+      throw e;
+    }
+  }
+
+
    // Function to decode JWT token and extract payload
    function decodeJWT(token) {
      try {
@@ -103,6 +127,8 @@ async function getJobDetails(po, authToken) {
 
     // Extraction logic
   function extractJobInfo(obj) {
+    // console.log("///// object raw ///////",obj)
+    console.log("//// case ID ////: ",obj.caseDTO.id)
     let drop_off = null;
     let notes=obj?.service?.notes;
     notes=notes?.split("\n");   
@@ -112,11 +138,12 @@ async function getJobDetails(po, authToken) {
     for (let i = 0; i < notes.length; i++) {
         if(notes[i].includes("dropped off")){
            drop_off = notes[i+1]; 
-        } 
+        }
     }
     }
     return {
      completionTime:formatToCentralTime(obj?.service?.completeTimestamp ? obj?.service?.completeTimestamp:  Date.now()),
+     caseDTO:obj.caseDTO.id,
       po_number: obj?.service?.number ?? null,
       service_type: obj?.service?.serviceType ?? null,
       customer: obj?.service?.contactName ?? obj?.personalInfo?.name ?? null,
@@ -131,4 +158,4 @@ async function getJobDetails(po, authToken) {
     };
   }
   
-  export { getJobDetails,getAuthToken,extractJobInfo };
+  export { getJobDetails,getAuthToken,extractJobInfo,getCaseDetails };

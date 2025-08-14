@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import { promises as fs } from 'fs';
 import { data as bodyData } from './data0.js';
 // import { data as bodyData } from './data0_completed.js';
-import { getJobDetails, getAuthToken, extractJobInfo } from './getJobDetails.js';
+import { getJobDetails, getCaseDetails, getAuthToken, extractJobInfo } from './getJobDetails.js';
 
 let cookiesFileName = "./cookies_towbook18.json";
 
@@ -185,6 +185,7 @@ async function dispatchToTowbook(poNumber) {
     console.log(`Step 2: Fetching job details for PO ${poNumber}...`);
     const jobDetailsResponse = await getJobDetails(poNumber, token);
     
+    
     if (!jobDetailsResponse || !jobDetailsResponse.data || jobDetailsResponse.data.length === 0) {
       throw new Error(`No job data found for PO ${poNumber}`);
     }
@@ -192,6 +193,18 @@ async function dispatchToTowbook(poNumber) {
     // Step 3: Extract job information
     console.log('Step 3: Extracting job information...');
     const jobInfo = extractJobInfo(jobDetailsResponse.data[0]);
+
+     if(!jobInfo.drop_off){
+      console.log("Drop off address is null trying getCaseDetails function to get drop off Address.......")
+      let caseDetails= await getCaseDetails(jobInfo.caseDTO,token)
+      let dropoff_address=caseDetails?.jobs[0]?.dropOffLocation?.address
+      if(dropoff_address){
+      jobInfo.drop_off=dropoff_address
+      }
+    }
+
+
+    // console.log(jobInfo)
     
     if (!jobInfo.po_number) {
       throw new Error('Invalid job data - missing PO number');

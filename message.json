@@ -1,128 +1,76 @@
 {
   "message": {
     "caseDTO": {
-      "id": "7264624"
+      "id": "7271394"
     },
     "service": {
-      "id": "e635895d-203a-43d8-ac8b-5ffea2234e4e",
-      "number": 9045323,
+      "id": "12a401d1-5120-41ba-b4ae-8552c9ae953e",
+      "number": 9053581,
       "status": 1,
       "statusDescription": "Found Providers",
-      "name": "Flat Tire",
-      "serviceId": 2005,
-      "serviceType": "RSA",
-      "created": 1754941799000,
-      "expires": 1754945399000,
-      "notes": "\n Where is your vehicle located? \n 1814 W Main St, Houston, TX 77098, USA\n Is your vehicle blocking traffic or in an otherwise unsafe location? \n No\n Where at this location is the vehicle actually parked? \n Home\n Vehicle location actual parking details \n Driveway\n Confirm not restricted highway \n No\n Which State Route or Highway is your vehicle on? \n \n Is there enough safe space available around the vehicle for our service technician to work? \n Yes\n Does your vehicle have run-flat tires? \n No \n How many tires are flat? \n 1 \n Do you have enough working spare tires available? \n Yes \n Which tire(s) are flat? \n Rear - Driver side \n Is your vehicle equipped with wheel locks? \n No \n Do you have the key to unlock the wheels? \n Yes \n Is the vehicle on a flat, stable surface? \n Yes \n Will you be with the vehicle when our service technician arrives? \n Yes \n Notes \n she has spare tire available. \n ",
+      "name": "Towing",
+      "serviceId": 2001,
+      "serviceType": "TOW",
+      "created": 1755205024000,
+      "expires": 1755209309000,
+      "notes": "Towing skates are REQUIRED on your flatbed truck for this job.\n\n Will the transmission go into neutral?\nyes\nIs the steering locked?\nyes\nAre the front wheels turned or facing straight?\nStraight\nDO YOU NEED A RIDE WITH THE PROVIDER TO THE DESTINATION? (MAX OF 2 PEOPLE)?\nno\nIs member at home?\nyes\nIs the vehicle at a safe location OR side of the road?\nSafe Location\nIs the car in a garage?\nyes",
       "demo": false,
       "partnerName": "BMW",
-      "description": "I have a flat tire",
+      "description": "I need a tow",
       "type": "RSA_ON_DEMAND",
       "dispatchOnHold": false,
-      "contactPhoneNumber": "7132986229",
-      "rateCard": "GOLD",
-      "contactName": "Alina Guerrero",
+      "contactPhoneNumber": "7135963169",
       "roundTrip": false
     },
     "personalInfo": {
-      "name": "Alina Guerrero",
-      "phone": "7132986229",
-      "phoneCode": 1,
+      "name": "BMW of Murrieta EAN Holdings LLC",
+      "phone": "7135963169",
       "textOptIn": true,
+      "id": "872858d1-3c79-46cc-ae03-d9494f1a5b1d",
       "enabled": false
     },
     "location": {
-      "street": "1814 West Main Street",
+      "street": "1118 Lashbrook Drive",
       "city": "Houston",
       "state": "TX",
-      "zipCode": "77098",
-      "longitude": -95.4052346,
-      "latitude": 29.7362394,
-      "address": "1814 W Main St, Houston, TX 77098, USA",
+      "zipCode": "77077",
+      "longitude": -95.5972673,
+      "latitude": 29.7582835,
+      "address": "1118 Lashbrook Dr, Houston, TX 77077, USA",
       "impoundFacility": false,
-      "zip": "77098"
+      "zip": "77077"
+    },
+    "dropOffLocation": {
+      "street": "9570 Southwest Freeway",
+      "city": "Houston",
+      "state": "TX",
+      "zipCode": "77074",
+      "longitude": -95.5443294,
+      "latitude": 29.6777186,
+      "address": "9570 Southwest Freeway,Houston TX 77074",
+      "impoundFacility": false,
+      "keyDropboxAvailable": "YES",
+      "zip": "77074"
     },
     "vehicle": {
       "make": "BMW",
-      "model": "X1 XDRIVE28I",
-      "color": "ALPINE WHITE 3",
-      "year": "2024",
-      "id": "a4c203de-c8c5-42ff-a65a-0f0568d4a792",
-      "vin": "WBX73EF04S5142970"
-    },
-    "provider": {
-      "status": 0,
-      "costs": [
-        {
-          "type": "BASE",
-          "price": 100,
-          "providerPaymentCreated": false,
-          "hookPrice": null,
-          "pricePerMile": null,
-          "freeMiles": null,
-          "paymentNote": null,
-          "hideOfferPrice": false
-        }
-      ],
-      "validProviderDetails": false,
-      "interested": false
-    },
-    "driverDTO": {
-      "uKey": null,
-      "uid": null,
-      "firstName": null,
-      "lastName": null,
-      "companyName": null,
-      "driverPhoneNumber": null,
-      "companyPhoneNumber": null,
-      "fullAddress": null,
-      "geo": null,
-      "cKey": null,
-      "action": null,
-      "lastLocationUpdateTimeStamp": null,
-      "distance": null,
-      "channel": null,
-      "street": null,
-      "city": null,
-      "state": null,
-      "zip": null,
-      "truckType": null,
-      "networks": null,
-      "actionId": 0,
-      "actionTime": null,
-      "driverId": null,
-      "offeredAt": 1754941929000,
-      "offerExpires": 1754943137920,
-      "providerNetworkId": null,
-      "companyId": null,
-      "providerRank": null,
-      "providerSearchRule": null,
-      "driverExternalId": null,
-      "latitude": null,
-      "longitude": null,
-      "accuracy": null,
-      "speed": null,
-      "direction": null,
-      "moving": null,
-      "categories": null,
-      "technicianUid": null,
-      "driverStatus": null,
-      "vehicleStatus": null,
-      "truckUid": null,
-      "truckId": null,
-      "truckName": null,
-      "truckExternalId": null,
-      "distanceUnit": null
+      "model": "X7 xDrive40i",
+      "color": "Alpine White",
+      "year": "2026",
+      "id": "4d594aa7-69f9-4b8d-b50e-128ca6a77f1f",
+      "vin": "5UX23EM09T9069744"
     },
     "stepDTO": {
       "preInspectionVideoRequired": false,
-      "preInspectionSignatureRequired": false,
+      "preInspectionSignatureRequired": true,
       "postInspectionVideoRequired": false,
-      "postInspectionSignatureRequired": false,
+      "postInspectionSignatureRequired": true,
       "providerLeftSiteStatusRequired": false,
       "jobMetricResponseRequired": false,
-      "preInspectionRequired": false,
-      "postInspectionRequired": false,
+      "preInspectionRequired": true,
+      "preInspectionType": "PHOTO",
+      "postInspectionRequired": true,
+      "postInspectionType": "PHOTO",
       "preServiceDocketFormRequired": false,
       "postServiceDocketFormRequired": false,
       "preServiceIndemnityFormRequired": false,
@@ -130,46 +78,21 @@
       "preInspectionSkipRequired": false,
       "postInspectionSkipRequired": false,
       "skatesRequired": false,
-      "considerDriverDocuments": false
-    },
-    "communicationChannel": {
-      "customerEndPoint": {
-        "endPoint": "7132986229"
-      }
-    },
-    "dispatchCommunicationChannel": {
-      "customerEndPoint": {
-        "endPoint": "7132986229"
-      }
-    },
-    "servicePrice": {
-      "servicePrice": 100,
-      "freeEnrouteMiles": null,
-      "enrouteMilePrice": null,
-      "enrouteMiles": null,
-      "freeLoadedMiles": null,
-      "loadedMiles": null,
-      "loadedMilePrice": null,
-      "totalOfferPrice": 100,
-      "rateCard": null,
-      "distanceUnit": null,
-      "currencyUnit": null,
-      "exchangeToLocationTowMiles": null,
-      "locationToDropOffTowMiles": null,
-      "goaPrice": null,
-      "itemizedCosts": null,
-      "paymentNote": null,
-      "hideProviderPrice": false
+      "considerDriverDocuments": false,
+      "preInspectionPhotoCount": 4,
+      "postInspectionPhotoCount": 4
     },
     "step": {
       "preInspectionVideoRequired": false,
-      "preInspectionSignatureRequired": false,
+      "preInspectionSignatureRequired": true,
       "postInspectionVideoRequired": false,
-      "postInspectionSignatureRequired": false,
+      "postInspectionSignatureRequired": true,
       "providerLeftSiteStatusRequired": false,
       "jobMetricResponseRequired": false,
-      "preInspectionRequired": false,
-      "postInspectionRequired": false,
+      "preInspectionRequired": true,
+      "preInspectionType": "PHOTO",
+      "postInspectionRequired": true,
+      "postInspectionType": "PHOTO",
       "preServiceDocketFormRequired": false,
       "postServiceDocketFormRequired": false,
       "preServiceIndemnityFormRequired": false,
@@ -177,7 +100,9 @@
       "preInspectionSkipRequired": false,
       "postInspectionSkipRequired": false,
       "skatesRequired": false,
-      "considerDriverDocuments": false
+      "considerDriverDocuments": false,
+      "preInspectionPhotoCount": 4,
+      "postInspectionPhotoCount": 4
     }
   }
 }
