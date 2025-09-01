@@ -962,7 +962,7 @@
         }
 
         // Dispatch job UI function (opens modal and shows detailed feedback)
-        async function dispatchJob() {
+        async function dispatchJob(forceCreate = false) {
             const poInput = document.getElementById('poNumberInput');
             const po = poInput.value && poInput.value.trim();
             if (!po) {
@@ -978,7 +978,7 @@
                 const response = await fetch('/api/dispatch', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ po })
+                    body: JSON.stringify({ po, forceCreate })
                 });
 
                 let result;
@@ -992,10 +992,15 @@
 
                 if (result.success) {
                     setDispatchResult(true, result.message || `Dispatched PO ${po}`, JSON.stringify(result, null, 2));
-                    // clear input on success
                     poInput.value = '';
+                } else if (result.jobExists) {
+                    // If job exists, ask user if they want to force create it
+                    if (confirm(result.message + '\nDo you want to create a new job anyway?')) {
+                        dispatchJob(true); // Re-run with forceCreate = true
+                    } else {
+                        setDispatchResult(false, 'Dispatch cancelled by user.', JSON.stringify(result, null, 2));
+                    }
                 } else {
-                    // result indicates failure but may contain details
                     const msg = result.message || result.error || 'Dispatch failed';
                     setDispatchResult(false, msg, JSON.stringify(result, null, 2));
                 }

@@ -506,13 +506,13 @@ app.get('/api/status', async (req, res) => {
 
 app.post('/api/dispatch', express.json(), async (req, res) => {
     try {
-        const { po } = req.body;
+        const { po, forceCreate } = req.body; // Added forceCreate
         if (!po) {
             return res.status(400).json({ success: false, message: 'Missing PO number' });
         }
 
-        console.log(`Received dispatch request for PO: ${po}`);
-        const result = await dispatchToTowbook(po.toString());
+        console.log(`Received dispatch request for PO: ${po}, Force Create: ${forceCreate}`);
+        const result = await dispatchToTowbook(po.toString(), forceCreate);
         // dispatchToTowbook returns a detailed result object (success/message/etc.)
         res.json(result);
     } catch (err) {

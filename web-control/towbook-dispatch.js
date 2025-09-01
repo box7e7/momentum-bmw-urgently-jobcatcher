@@ -165,7 +165,7 @@ async function dispatchTowbookInternal(jsonData, additionalArgument) {
  * @param {string|number} poNumber - The PO number to dispatch
  * @returns {Object} - Result object with success status and details
  */
-async function dispatchToTowbook(poNumber) {
+async function dispatchToTowbook(poNumber, forceCreate = false) {
   try {
     console.log(`Starting dispatch process for PO ${poNumber}...`);
     
@@ -216,10 +216,11 @@ async function dispatchToTowbook(poNumber) {
     console.log(`Step 4: Checking if PO ${poNumber} already exists in Towbook...`);
     const existingJobs = await checkpoNumber(poNumber);
     
-    if (existingJobs && existingJobs.length > 0) {
+    if (!forceCreate && existingJobs && existingJobs.length > 0) {
       return {
         success: false,
-        message: `Job with PO ${poNumber} already exists in Towbook`,
+        message: `Job with PO ${poNumber} already exists in Towbook.`,
+        jobExists: true, // Flag to indicate job exists
         timestamp: new Date().toISOString(),
         poNumber: poNumber,
         existingJobs: existingJobs.length
