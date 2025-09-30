@@ -42,6 +42,20 @@ class UrgentlyAutomation {
         // Counties
         this.austin_counties = ['Mclennan County', 'Travis County', 'Williamson County', 'Hays County', 'Bastrop County', 'Bell County'];
         this.dallas_counties = ['Dallas County', 'Collin County', 'Tarrant County', 'Denton County', 'Rockwall County'];
+        this.sanantonio_counties =  [
+            'Bexar County',
+            'Comal County',
+            'Guadalupe County',
+            'Wilson County',
+            'Atascosa County',
+            'Medina County',
+            'Kendall County',
+            'Bandera County',
+            'Blanco County',
+            'Hays County',
+            'Caldwell County',
+            'Gonzales County'
+        ];
 
         // Tracking
         this.po_number_global = [];
@@ -161,11 +175,18 @@ class UrgentlyAutomation {
                 console.log("No Job Assignment");
                 return { status: false, location: location };
             }
+        } else if (this.sanantonio_counties.includes(location.county)) {
+
+        console.log("#################################################")
+        console.log("This Job is from San antonio, No assignment");
+        console.log("#################################################")
+        return { status: false, location: location };
+        
         } else {
-            console.log("Assign Job");
-            return { status: true, location: location };
+                console.log("Assign Job");
+                return { status: true, location: location };
+            }
         }
-    }
 
 
     // // Extract job information

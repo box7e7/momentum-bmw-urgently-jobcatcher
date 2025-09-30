@@ -1,64 +1,131 @@
 {
   "message": {
     "caseDTO": {
-      "id": "7271394"
+      "id": "7308666"
     },
     "service": {
-      "id": "12a401d1-5120-41ba-b4ae-8552c9ae953e",
-      "number": 9053581,
+      "id": "f0c54d40-45c3-47e1-b7f5-5fff8578f55a",
+      "number": 9098893,
       "status": 1,
       "statusDescription": "Found Providers",
       "name": "Towing",
       "serviceId": 2001,
       "serviceType": "TOW",
-      "created": 1755205024000,
-      "expires": 1755209309000,
-      "notes": "Towing skates are REQUIRED on your flatbed truck for this job.\n\n Will the transmission go into neutral?\nyes\nIs the steering locked?\nyes\nAre the front wheels turned or facing straight?\nStraight\nDO YOU NEED A RIDE WITH THE PROVIDER TO THE DESTINATION? (MAX OF 2 PEOPLE)?\nno\nIs member at home?\nyes\nIs the vehicle at a safe location OR side of the road?\nSafe Location\nIs the car in a garage?\nyes",
+      "created": 1756771167000,
+      "expires": 1756774767000,
+      "notes": "Towing skates are REQUIRED on your flatbed truck for this job.\n\n \n Where is your vehicle located? \n 9671 Meadowvale Dr, Houston, TX 77063, USA\n Is your vehicle blocking traffic or in an otherwise unsafe location? \n No\n Where at this location is the vehicle actually parked? \n Home\n Vehicle location actual parking details \n Street\n Confirm not restricted highway \n No\n Which State Route or Highway is your vehicle on? \n \n Is there enough safe space available around the vehicle for our service technician to work? \n Yes\n What is the reason for towing the vehicle? \n Transmission does not shift \n Does your vehicle go into neutral? \n no \n Are the front wheels turned or straight? \n Straight \n Is the vehicle in a garage? \n No \n What is the ceiling height of the garage? \n  \n Where will the vehicle be dropped off? \n 1210 Gray St, Houston, TX 77002 \n Would you like to schedule this tow for later? \n No \n Will you be with the vehicle when help arrives? \n Yes \n Based on your coverage, we can arrange for an Uber or Lyft. Are you interested in the service? \n No \n Customer Notes \n  \n ",
       "demo": false,
       "partnerName": "BMW",
       "description": "I need a tow",
       "type": "RSA_ON_DEMAND",
       "dispatchOnHold": false,
-      "contactPhoneNumber": "7135963169",
+      "contactPhoneNumber": "8328551596",
+      "rateCard": "GOLD",
+      "contactName": "Nidal Kal",
       "roundTrip": false
     },
     "personalInfo": {
-      "name": "BMW of Murrieta EAN Holdings LLC",
-      "phone": "7135963169",
+      "name": "Nidal Kal",
+      "phone": "8328551596",
+      "phoneCode": 1,
       "textOptIn": true,
-      "id": "872858d1-3c79-46cc-ae03-d9494f1a5b1d",
       "enabled": false
     },
     "location": {
-      "street": "1118 Lashbrook Drive",
+      "street": "9671 Meadowvale Drive",
       "city": "Houston",
       "state": "TX",
-      "zipCode": "77077",
-      "longitude": -95.5972673,
-      "latitude": 29.7582835,
-      "address": "1118 Lashbrook Dr, Houston, TX 77077, USA",
+      "zipCode": "77063",
+      "longitude": -95.53880509999999,
+      "latitude": 29.7266202,
+      "address": "9671 Meadowvale Dr, Houston, TX 77063, USA",
       "impoundFacility": false,
-      "zip": "77077"
+      "zip": "77063"
     },
     "dropOffLocation": {
-      "street": "9570 Southwest Freeway",
+      "street": "1210 Gray St",
       "city": "Houston",
       "state": "TX",
-      "zipCode": "77074",
-      "longitude": -95.5443294,
-      "latitude": 29.6777186,
-      "address": "9570 Southwest Freeway,Houston TX 77074",
+      "zipCode": "77002",
+      "longitude": -95.36928,
+      "latitude": 29.74738,
+      "address": "1210 Gray St,Houston TX 77002",
       "impoundFacility": false,
+      "dropboxInstructions": "Please leave keys at the night drop box.\n2001 San Jacinto St, Houston, TX,77002",
       "keyDropboxAvailable": "YES",
-      "zip": "77074"
+      "zip": "77002"
     },
     "vehicle": {
       "make": "BMW",
-      "model": "X7 xDrive40i",
-      "color": "Alpine White",
-      "year": "2026",
-      "id": "4d594aa7-69f9-4b8d-b50e-128ca6a77f1f",
-      "vin": "5UX23EM09T9069744"
+      "model": "M4",
+      "color": "MINERAL GREY METALLIC",
+      "year": "2017",
+      "id": "b2118b1a-93bd-4752-86a2-6b75fca802a9",
+      "vin": "WBS4Z9C52JED22187"
+    },
+    "provider": {
+      "status": 0,
+      "costs": [
+        {
+          "type": "BASE",
+          "price": 200,
+          "providerPaymentCreated": false,
+          "hookPrice": 160,
+          "pricePerMile": 5,
+          "freeMiles": 5,
+          "paymentNote": null,
+          "hideOfferPrice": false
+        }
+      ],
+      "validProviderDetails": false,
+      "interested": false
+    },
+    "driverDTO": {
+      "uKey": null,
+      "uid": null,
+      "firstName": null,
+      "lastName": null,
+      "companyName": null,
+      "driverPhoneNumber": null,
+      "companyPhoneNumber": null,
+      "fullAddress": null,
+      "geo": null,
+      "cKey": null,
+      "action": null,
+      "lastLocationUpdateTimeStamp": null,
+      "distance": null,
+      "channel": null,
+      "street": null,
+      "city": null,
+      "state": null,
+      "zip": null,
+      "truckType": null,
+      "networks": null,
+      "actionId": 0,
+      "actionTime": null,
+      "driverId": null,
+      "offeredAt": 1756771175000,
+      "offerExpires": 1756772377938,
+      "providerNetworkId": null,
+      "companyId": null,
+      "providerRank": null,
+      "providerSearchRule": null,
+      "driverExternalId": null,
+      "latitude": null,
+      "longitude": null,
+      "accuracy": null,
+      "speed": null,
+      "direction": null,
+      "moving": null,
+      "categories": null,
+      "technicianUid": null,
+      "driverStatus": null,
+      "vehicleStatus": null,
+      "truckUid": null,
+      "truckId": null,
+      "truckName": null,
+      "truckExternalId": null,
+      "distanceUnit": null
     },
     "stepDTO": {
       "preInspectionVideoRequired": false,
@@ -81,6 +148,35 @@
       "considerDriverDocuments": false,
       "preInspectionPhotoCount": 4,
       "postInspectionPhotoCount": 4
+    },
+    "communicationChannel": {
+      "customerEndPoint": {
+        "endPoint": "8328551596"
+      }
+    },
+    "dispatchCommunicationChannel": {
+      "customerEndPoint": {
+        "endPoint": "8328551596"
+      }
+    },
+    "servicePrice": {
+      "servicePrice": 160,
+      "freeEnrouteMiles": 5,
+      "enrouteMilePrice": 5,
+      "enrouteMiles": 13,
+      "freeLoadedMiles": null,
+      "loadedMiles": null,
+      "loadedMilePrice": null,
+      "totalOfferPrice": 200,
+      "rateCard": null,
+      "distanceUnit": null,
+      "currencyUnit": null,
+      "exchangeToLocationTowMiles": null,
+      "locationToDropOffTowMiles": null,
+      "goaPrice": null,
+      "itemizedCosts": null,
+      "paymentNote": null,
+      "hideProviderPrice": false
     },
     "step": {
       "preInspectionVideoRequired": false,
