@@ -1,5 +1,5 @@
 # Use an official Node runtime as a parent image
-FROM node:20-bullseye-slim
+FROM node:20-bookworm-slim
 
 # Puppeteer expects certain libraries. Install cron, Chromium and required packages.
 RUN apt-get update && apt-get install -y --no-install-recommends \
